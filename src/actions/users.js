@@ -1,5 +1,5 @@
 export const RECEIVE_USERS = "RECEIVE_USERS";
-export const receiveUsers = (usersList = []) => ({
+export const receiveUsers = (usersList) => ({
   type: RECEIVE_USERS,
   usersList,
 });

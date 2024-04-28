@@ -20,17 +20,8 @@ const App = ({ authorized, dispatch }) => {
 
   return (
     <Layout>
-      <Header
-        style={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      ></Header>
-      <Content
-        style={{
-          padding: "0 48px",
-        }}
-      >
+      <Header className="header"></Header>
+      <Content className="content">
         <div>
           <Routes>
             {authorized ? (
@@ -49,13 +40,7 @@ const App = ({ authorized, dispatch }) => {
           </Routes>
         </div>
       </Content>
-      <Footer
-        style={{
-          textAlign: "center",
-          minHeight: 280,
-          padding: 24,
-        }}
-      >
+      <Footer className="footer">
         Employee Poll ©{new Date().getFullYear()} Created by Lamees Osama
       </Footer>
     </Layout>
