@@ -33,6 +33,10 @@
   overflow: hidden;
 }
 
+.header h1 {
+  color: white;
+}
+
 .footer {
   text-align: center;
   padding: 40px;
@@ -62,6 +66,54 @@
 
 .App-link {
   color: #61dafb;
+}
+
+/*Nav Styles */
+.ant-tabs-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.ant-tabs {
+  margin: 20px;
+}
+
+main.ant-layout-content.content.css-dev-only-do-not-override-1kuana8 {
+  height: 70%;
+  top: 20%;
+}
+
+.ant-tabs-tab-btn {
+  color: white;
+}
+
+.ant-tabs-tab {
+  width: 50%;
+  justify-content: center;
+}
+
+.signout-button {
+  background-color: #4096ff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  position: fixed;
+  top: 24px;
+  right: 35px;
+}
+
+.signout-button:hover {
+  background-color: #0958d9;
+  color: white;
 }
 
 @keyframes App-logo-spin {

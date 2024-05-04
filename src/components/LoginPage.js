@@ -1,5 +1,6 @@
 import React, { useEffect, Fragment, useState } from "react";
-import { Button, Checkbox, Form, Input, Select } from "antd";
+import { Button, Checkbox, Form, Input, Select, Alert } from "antd";
+import { setAuthedUser } from "../actions/authedUser";
 
 import { connect } from "react-redux";
 
@@ -8,6 +9,14 @@ const Login = ({ users, dispatch }) => {
   const [selectedUser, setSelectedUser] = useState("");
   const handleChange = (value) => {
     console.log(`selected ${value}`);
+
+    setSelectedUser(value);
+  };
+
+  const handleLogin = (e) => {
+    selectedUser !== ""
+      ? dispatch(setAuthedUser(selectedUser))
+      : alert("Please select user");
   };
 
   return (
@@ -38,7 +47,7 @@ const Login = ({ users, dispatch }) => {
       >
         <Select onChange={handleChange} placeholder="Please select a user">
           {users.map(({ id, name }) => (
-            <option key={id} value={id}>
+            <option label={id} value={id}>
               {name}
             </option>
           ))}
@@ -52,7 +61,7 @@ const Login = ({ users, dispatch }) => {
           span: 16,
         }}
       >
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" onClick={handleLogin}>
           Login
         </Button>
       </Form.Item>

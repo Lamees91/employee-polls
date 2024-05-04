@@ -12,6 +12,7 @@ import Leaderboard from "./Leaderboard";
 import QuestionVote from "./QuestionVote";
 import NewPoll from "./NewPoll";
 import PageNotFound from "./PageNotFound";
+import NavBar from "./NavBar";
 
 const App = ({ authorized, dispatch }) => {
   useEffect(() => {
@@ -20,18 +21,20 @@ const App = ({ authorized, dispatch }) => {
 
   return (
     <Layout>
-      <Header className="header"></Header>
+      <Header className="header">
+        {authorized ? <NavBar></NavBar> : <h1> Employee Poll </h1>}
+      </Header>
       <Content className="content">
         <div>
           <Routes>
             {authorized ? (
-              <Fragment>
-                <Route path="/dashboard" element={<Dashboard />} />
+              <React.Fragment>
+                <Route path="/" element={<Dashboard />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />
                 <Route path="/add" element={<NewPoll />} />
                 <Route path="/question/:id" element={<QuestionVote />} />
                 <Route path="*" element={<PageNotFound />} />
-              </Fragment>
+              </React.Fragment>
             ) : (
               <Fragment>
                 <Route path="*" element={<Login />} />
