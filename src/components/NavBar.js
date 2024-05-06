@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Tabs } from "antd";
 import { useNavigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
+import Logout from "./Logout";
 
 const NavBar = ({ authedUser }) => {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ const NavBar = ({ authedUser }) => {
         ]}
         onChange={onChange}
       />
-      <button class="signout-button">Logout</button>
+      <Logout></Logout>
     </>
   );
 };
